@@ -1,0 +1,13 @@
+-- Crear Frontend Comentarios
+-- 1. Checar la version de ng = 12.X.X 
+-- 2. Instalar Bootstrap 5.0.2
+-- 3. Crear componentes, interfaces y servicios (conectarnos con un Backend, reutilizar código, etc)
+-- 4. Modificar Navbar
+-- totalidad del frontend
+-- 5. Modificar ListComentario
+-- 6. Routing
+-- 7. Agregar comentario
+-- 8. Agregar comentario: Bind campos 
+-- 9. Agregar commentario: Validaciones
+-- 10. Ver comentario
+-- Terminado nuestro frontend

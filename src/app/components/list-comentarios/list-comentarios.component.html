@@ -1,0 +1,39 @@
+<div class="row mt-3">
+    <div class="col-lg-6">
+        <h3>Listado de comentarios</h3>
+    </div>
+    <div class="col-lg-6">
+        <button class="btn btn-primary float-end" routerLink="/agregar">Nuevo Comentario</button>
+    </div>
+</div>
+<!-- especificamos que estamos usando angular con *, y contiene un bule en el que lleva el arreglo de comentarios -->
+<table *ngIf="listComentarios.length>0" class="table table-hover mt-3">
+    <thead>
+        <td>Titulo</td>
+        <td>Creador</td>
+        <td>Fecha</td>
+        <td></td>
+        <td></td>
+    </thead>
+    <thead>
+        <tr *ngFor ="let comentario of listComentarios">
+        <td>
+            <a [routerLink]="['/ver', 1]">{{ comentario.titulo }}</a>
+        </td>
+        <td>{{ comentario.creador }}</td>
+        <td>{{ comentario.fechaCreacion | date:'dd/MM/yyyy' }}</td> <!-- lleva un formato date  -->
+        <td style="width:10%">
+            <!-- botones que salieron de la pagina de bootstrap version 5.0.2 -->
+            <button class="btn btn-primary btn-sm float-end">Editar</button>
+        </td>
+        <td style="width:10%">
+            <button class="btn btn-danger btn-sm float-end">Eliminar</button>
+        </td>
+        </tr>
+    </thead>
+</table>
+<!-- si no hay comentarios muestra el siguiente mensaje -->
+<!-- regresa un falso o verdadero, si listComentarios.length es igual a cero, no hay comentarios -->
+<div *ngIf="listComentarios.length===0" class="row mt-5">
+    <h5>No  hay más registros.</h5>
+</div>

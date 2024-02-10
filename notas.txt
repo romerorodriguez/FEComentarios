@@ -1,0 +1,19 @@
+creacion de proyecto
+ng new FEComentarios 
+
+inicializar bootstrap en angular.json
+ "styles": [
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css" 
+            ],
+
+comandos a usar
+ng s --o inicializar proyecto
+npm install bootstrap@5.0.2 instalar bootstrap version 5.0.2
+ng g c components/navbar crear componente navbar dentro de components
+ng g c components/agregarEditarComentario 
+ng g c components/verComentario  
+ng g c components/listComentarios
+services: conectarnos con el backend
+ng g s services/comentario Service para llamar al servicio del backend
+

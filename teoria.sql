@@ -10,4 +10,10 @@
 -- 8. Agregar comentario: Bind campos 
 -- 9. Agregar commentario: Validaciones
 -- 10. Ver comentario
--- Terminado nuestro frontend
+-- Terminado nuestro Frontend 01/02/2024 
+-- Terminado nuestro Backend 07/02/2024
+-- 11. Conectarnos del frontend al Backend
+-- 12. Listar y eliminar comentarios
+-- 13. Ver comentario (9/02/2024)
+-- 14. Guardar comentario (9/02/2024)
+-- 15. Actualizar comentario (10/02/2024)

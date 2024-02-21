@@ -1,5 +1,5 @@
-<h3 class="mt-3">Agregar comentario</h3>
-<form [formGroup]="agregarComentario" (ngSubmit)="agregar()">
+<h3 class="mt-3">{{ accion }} comentario</h3>
+<form [formGroup]="agregarComentario" (ngSubmit)="agregarEditarComentario()">
     <div class="mb-3">
         <!-- proviene de la pagina de bootstratp: https://getbootstrap.com/docs/5.0/forms/form-control/ -->
         <label for="titulo" class="form-label">Titulo</label>

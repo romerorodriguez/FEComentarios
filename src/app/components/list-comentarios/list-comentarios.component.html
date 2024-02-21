@@ -18,16 +18,16 @@
     <thead>
         <tr *ngFor ="let comentario of listComentarios">
         <td>
-            <a [routerLink]="['/ver', 1]">{{ comentario.titulo }}</a>
+            <a [routerLink]="['/ver', comentario.id]">{{ comentario.titulo }}</a>
         </td>
         <td>{{ comentario.creador }}</td>
         <td>{{ comentario.fechaCreacion | date:'dd/MM/yyyy' }}</td> <!-- lleva un formato date  -->
         <td style="width:10%">
             <!-- botones que salieron de la pagina de bootstrap version 5.0.2 -->
-            <button class="btn btn-primary btn-sm float-end">Editar</button>
+            <button [routerLink]="['/editar' , comentario.id]" class="btn btn-primary btn-sm float-end">Editar</button>
         </td>
         <td style="width:10%">
-            <button class="btn btn-danger btn-sm float-end">Eliminar</button>
+            <button (click)="eliminarComentario(comentario.id)" class="btn btn-danger btn-sm float-end">Eliminar</button>
         </td>
         </tr>
     </thead>

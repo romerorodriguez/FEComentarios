@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from  '@angular/common/http'
 
 //componentes
 import { AppComponent } from './app.component';
@@ -22,7 +23,8 @@ import { ListComentariosComponent } from './components/list-comentarios/list-com
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule //se activa de forma dinamica el agregar-editar-comentario
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Comentario } from 'src/app/interfaces/Comentario';
+import { ComentarioService } from 'src/app/services/comentario.service';
 
 @Component({
   selector: 'app-list-comentarios',
@@ -8,36 +9,30 @@ import { Comentario } from 'src/app/interfaces/Comentario';
 })
 export class ListComentariosComponent implements OnInit {
 //Arreglo donde se vacia el json
-  listComentarios: Comentario [] = [
-    {
-      titulo: 'Angular', 
-      creador: 'Fernando Rivera', 
-      fechaCreacion: new Date(), 
-      texto: 'Framework para crear SPA'
-    },
-    {
-      titulo: 'React',
-      creador: 'Claudia Saldivar',
-      fechaCreacion: new Date(),
-      texto: `Libreria para crear SPA`
-    },
-    {
-      titulo: 'VUE',
-      creador:  'Octavio Senties',
-      fechaCreacion:  new Date(),
-      texto:  'Framework progresivo para crear SPA'
-    },
-    {
-      titulo: 'Python',
-      creador: 'Willian Stone',
-      fechaCreacion: new Date(''),
-      texto: 'Lenguaje de programación'
-    }
-  ]
+  listComentarios: Comentario [] = [];
 
-  constructor() { }
+  constructor(private _comentarioService: ComentarioService) { } //los guiones bajos significan que solo se haran servicios
 
   ngOnInit(): void {
+    this.getComentarios();
+  }
+
+  getComentarios() {
+    this._comentarioService.getListComentarios().subscribe(data => {
+      //console.log(data);
+      this.listComentarios = data;
+    }, error => {
+      console.log(error);
+    })
+  }
+
+  eliminarComentario(id: any){
+    console.log(id);
+    this._comentarioService.deleteComentario(id).subscribe(data => {
+      this.getComentarios();
+    }, error => {
+      console.log(error);
+    })
   }
 
 }
